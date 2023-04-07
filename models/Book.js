@@ -31,10 +31,6 @@ Book.init({
         type: DataTypes.INTEGER,
         allowNull: true
     },
-    description: {
-        type: DataTypes.TEXT,
-        allowNull: true
-    }
 }, {
     sequelize,
     timestamps: false,

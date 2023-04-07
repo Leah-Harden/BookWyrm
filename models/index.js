@@ -15,3 +15,5 @@ Book.hasMany(InProgress, {
 
 InProgress.belongsTo(Book, { foreignKey: 'book_id' });
 InProgress.belongsTo(User, { foreignKey: 'user_id' });
+
+module.exports = {Book, User, InProgress}
