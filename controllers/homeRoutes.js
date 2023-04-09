@@ -9,12 +9,27 @@ router.get('/', async (req, res) => {
         title: (!book.subtitle ? book.title : book.title + ": " + book.subtitle),
         author: book.author_name,
         ...(book.isbn ? { isbn: book.isbn[0] } : {}),
-        ...(book.cover_i ? {coverUrl: `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} : {}),
-        ...(book.number_of_pages_median ? {pageCount: book.number_of_pages_median} : {}),
+        ...(book.cover_i ? { coverUrl: `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` } : {}),
+        ...(book.number_of_pages_median ? { pageCount: book.number_of_pages_median } : {}),
     })
     console.log(bookInfo);
 
     res.json(bookInfo);
 })
+router.get('/:title', async (req, res) => {
+    const bookData = await fetch(`https://openlibrary.org/search.json?q=${req.body.title}&limit=5)}`);
+    const books = await bookData.json();
+    const bookInfo = books.docs.map((book) => book = {
+        title: (!book.subtitle ? book.title : book.title + ": " + book.subtitle),
+        author: book.author_name,
+        ...(book.isbn ? { isbn: book.isbn[0] } : {}),
+        ...(book.cover_i ? { coverUrl: `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` } : {}),
+        ...(book.number_of_pages_median ? { pageCount: book.number_of_pages_median } : {}),
+    })
+    console.log(bookInfo);
 
-module.exports = router;
+    res.json(bookInfo);
+
+})
+
+        module.exports = router;
