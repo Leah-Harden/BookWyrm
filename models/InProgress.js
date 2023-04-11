@@ -18,7 +18,7 @@ InProgress.init({
         type: DataTypes.UUID,
         allowNull: false,
         references: {
-            model: 'books',
+            model: 'book',
             key: 'id'
         }
     },
@@ -26,7 +26,7 @@ InProgress.init({
         type: DataTypes.UUID,
         allowNull: false,
         references: {
-            model: 'users',
+            model: 'user',
             key: 'id'
         }
     }
