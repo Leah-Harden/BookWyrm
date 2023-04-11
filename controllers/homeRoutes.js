@@ -12,23 +12,30 @@ router.get('/', async (req, res) => {
             {
                 model: User,
                 username: ['username'],
+                bookProgress: []
             },
         ],
     });
-    const users = userData.map((user) => user.get({ plain: true }));
-    res.render('book', { 
-        logged_in: req.session.logged_in 
-    });
+    //this see if the user is already reading a book 
+    if(bookProgress = true) {
+        
+        const users = userData.map((user) => user.get({ plain: true }));
+        res.render('book', { 
+            logged_in: req.session.logged_in 
+        });
+    } else {
+            //this see if the user has no book on file so they can choose a new one
+        const users = userData.map((user) => user.get({ plain: true }));
+        res.render('choose', { 
+            logged_in: req.session.logged_in 
+        });
+    }
 } catch (err) {
     res.render('login', { 
         logged_in: req.session.logged_in 
     });
     }
 })
-
-
-
-
 
 
 
