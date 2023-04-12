@@ -17,15 +17,8 @@ User.init({
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    email: {
-        type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
-        validate: {
-            isEmail: true
-        }
+        unique: true
     },
     password: {
         type: DataTypes.STRING,
@@ -34,12 +27,11 @@ User.init({
             len: [8]
         }
     },
-    {
-        bookProgress: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        }
+    bookProgress: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
     }
+
 },
     {
         hooks: {
