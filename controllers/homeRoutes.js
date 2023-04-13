@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const withAuth = require('../utils/auth');
 const { User } = require('../models');
 
-
+//Should eventually include withAuth here so that it automatically reroutes to login page if not logged in.
 router.get('/', async (req, res) => {
     try {
         // so that user does not exist to will go to the catch
