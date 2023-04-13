@@ -1,16 +1,18 @@
-
+/*  specific color for most of handlebars   */
 :root{
     --main-color: #B9E8F6;
-    --grey-blue: #91B2C5;
-    --dark-blue: #4F6C7C;
-    --white: white;
+    --reader-speed: #91B2C5;
+    --user-input: #4F6C7C;
+    --empty-showcase: white;
     --black: black;
+
 };
 
 
 .merriweather {
     font-family: 'Merriweather', serif;
 };
+
 .raleway {
     font-family: 'Raleway', sans-serif;
 }
@@ -20,3 +22,34 @@ h1 {
     font-family: 'Merriweather';
     font-weight: bold;
 }
+
+
+input {
+    background-color: var(--main-color);
+}
+
+/*  color and life for most of handlebar   */
+body {
+    background-color: var(--main-color);
+}
+
+/* image sizing and placement */
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    border-radius: 50%;
+
+}
+
+/* unorder list */
+
+ul {
+    background-color: var(--main-color);
+}
+
+/* input of log in */
+
+

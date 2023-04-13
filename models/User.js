@@ -27,11 +27,13 @@ User.init({
             len: [8]
         }
     },
+
     // this is new
     bookProgress: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
+
 
 {
 
