@@ -40,12 +40,6 @@ User.init({
             allowNull: false,
         },
     },
-    // {
-    //     loginStat: {
-    //         type: DataTypes.BOOLEAN,
-    //         allowNull: false,
-    //     }
-    // } 
 {
         hooks: {
             beforeCreate: async (newUserData) => {
