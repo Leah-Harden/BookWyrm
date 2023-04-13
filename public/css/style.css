@@ -1,9 +1,9 @@
 /*  specific color for most of handlebars   */
 :root{
     --main-color: #B9E8F6;
-    --reader-speed: #91B2C5;
-    --user-input: #4F6C7C;
-    --empty-showcase: white;
+    --reader: #91B2C5;
+    --user: #4F6C7C;
+    --empty: white;
     --black: black;
 
 };
@@ -17,21 +17,104 @@
     font-family: 'Raleway', sans-serif;
 }
 
-h1 {
+/*  color and life for most of handlebar   */
+body {
     background-color: var(--main-color);
-    font-family: 'Merriweather';
-    font-weight: bold;
 }
+
+/* --------------- nav --------------- */
+
+.nav {
+    display: flex;
+    background-color: var(--user);
+    padding: 40px;
+    justify-content:space-between;
+    align-items: center;
+
+}
+
+.navTitle {
+    color: var(--empty);
+    font-size: 42px;
+
+    border-bottom: #91B2C5 solid 5px;
+}
+
+.navUl{
+    display: flex;
+    justify-content:space-evenly;
+    font-family: 'Merriweather', serif;
+
+}
+
+.navLi {
+    color: var(--empty);
+    background-color: var(--user);
+    padding: 10px;
+}
+
+
+/* --------------- nav --------------- */
+
+/* --------------- login --------------- */
 
 
 input {
     background-color: var(--main-color);
 }
 
-/*  color and life for most of handlebar   */
-body {
-    background-color: var(--main-color);
+.h1login {
+    font-size: 50px;
+    font-family: 'Merriweather', serif;
+    padding: 100px 60px 0px 60px ;
 }
+
+.hrlog {
+    border: var(--user) solid 5px;
+    width: 70%;
+}
+.formlog {
+    padding: 50px;
+}
+.inputlog {
+    border-radius: 15px;
+    border: none;
+    background-color: var(--user);
+}
+
+.label1 {
+    font-family: 'Raleway', sans-serif;
+    padding: 15px;
+}
+
+.noAcc {
+    font-family: 'Merriweather', serif;
+    padding-right: 30px;
+}
+
+.Mybutton {
+    height: 30px;
+    width: 150px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--reader);
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+
+/* --------------- login --------------- */
+
+/* --------------- book --------------- */
+.bookTitle {
+    font-size: 40px;
+    font-family: 'Merriweather', serif;
+    padding: 60px 60px 60px 60px ;
+}
+
+
+
+
 
 /* image sizing and placement */
 
@@ -39,10 +122,14 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 400px;
+    max-width: 300px;
+    border: white solid 50px;
     border-radius: 50%;
 
 }
+
+
+/* --------------- book --------------- */
 
 /* unorder list */
 
