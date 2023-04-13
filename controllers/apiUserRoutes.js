@@ -4,7 +4,6 @@ const {User} = require('../models');
 router.post('/login', async (req, res) => {
     const userData = await User.findOne({ where: { name: req.body.name } });
     if(!userData) {
-        //This can be changed to reload the login page with the message displaying on the page.
         res.status(400).json({ message: 'Incorrect username or password, please try again'});
         return;
     }
@@ -12,7 +11,6 @@ router.post('/login', async (req, res) => {
     const validPassword = await userData.checkPassword(req.body.password);
 
     if(!validPassword) {
-        //Same as above
         res.status(400).json({message: 'Incorrect username or password, please try again'});
         return;
     }
@@ -21,7 +19,6 @@ router.post('/login', async (req, res) => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
 
-        //This can be changed to render the account page with the user's data.
         res.json({ user: userData, message: 'You are now logged in!'});
     })
 
@@ -35,7 +32,6 @@ router.post('/signup', async (req, res) => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
         
-        //Similar to above these can be changed to render the new user's account page or reload the signup page with an error displaying.
         res.status(200).json(userData);
       });
     } catch (err) {
