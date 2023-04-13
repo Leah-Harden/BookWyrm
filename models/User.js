@@ -33,15 +33,10 @@ User.init({
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-},
-    // {
-    //     loginStat: {
-    //         type: DataTypes.BOOLEAN,
-    //         allowNull: false,
-    //     }
-    // } 
 
-    {
+
+{
+
         hooks: {
             beforeCreate: async (newUserData) => {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
