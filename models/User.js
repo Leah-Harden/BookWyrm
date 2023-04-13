@@ -33,8 +33,7 @@ User.init({
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-
-
+},
 {
 
         hooks: {
