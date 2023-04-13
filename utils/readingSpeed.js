@@ -1,22 +1,21 @@
 
+var convert = require('convert-seconds');
 
-const pages = 0
-
-function slowReading(){
-    let minutes = pages / 3.3
-    let hours = minutes / 60
-    let totalTime = Math.floor(hours * 100) / 100 
+function slowReading(pages){
+    let minutes = pages / 3.3;
+    let seconds = minutes * 60;
+    console.log(convert(seconds))
 }
 
 
-function avgReading(){
+function avgReading(pages){
     let minutes = pages / 1.7
-    let hours = minutes / 60
-    let totalTime = Math.floor(hours * 100) / 100 
+    let seconds = minutes * 60;
+    console.log(convert(seconds))
 }
 
-function fastReading(){
+function fastReading(pages){
     let minutes = pages / .83
-    let hours = minutes / 60
-    let totalTime = Math.floor(hours * 100) / 100 
+    let seconds = minutes * 60;
+    console.log(convert(seconds))
 }
