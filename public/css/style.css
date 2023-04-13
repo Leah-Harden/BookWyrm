@@ -1,6 +1,6 @@
 
-:root {
-    --light-blue: #B9E8F6;
+:root{
+    --main-color: #B9E8F6;
     --grey-blue: #91B2C5;
     --dark-blue: #4F6C7C;
     --white: white;
@@ -13,4 +13,10 @@
 };
 .raleway {
     font-family: 'Raleway', sans-serif;
-};
+}
+
+h1 {
+    background-color: var(--main-color);
+    font-family: 'Merriweather';
+    font-weight: bold;
+}
