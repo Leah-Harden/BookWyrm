@@ -5,11 +5,13 @@
     --user-input: #4F6C7C;
     --empty-showcase: white;
     --black: black;
-}
- 
+
+};
+
+
 .merriweather {
     font-family: 'Merriweather', serif;
-}
+};
 
 .raleway {
     font-family: 'Raleway', sans-serif;
@@ -20,6 +22,7 @@ h1 {
     font-family: 'Merriweather';
     font-weight: bold;
 }
+
 
 input {
     background-color: var(--main-color);
@@ -48,4 +51,5 @@ ul {
 }
 
 /* input of log in */
+
 
