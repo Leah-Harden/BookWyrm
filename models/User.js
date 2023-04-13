@@ -27,12 +27,18 @@ User.init({
             len: [8]
         }
     },
+    // this is new
     bookProgress: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-    }
-
+    },
 },
+    // {
+    //     loginStat: {
+    //         type: DataTypes.BOOLEAN,
+    //         allowNull: false,
+    //     }
+    // } 
     {
         hooks: {
             beforeCreate: async (newUserData) => {
