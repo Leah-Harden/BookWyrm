@@ -1,37 +1,42 @@
-<div>
-    <div class="container w-50">
-        <h1 class="text-center">Log In</h1>
-        <form>
-            <div class="row g-3">
-                <div class="col md-6">
-                    <label>Username</label>
-                    <input class="form-control" type="username"></input>
-                </div>
-                <div class = "col md-6">
-                    <label>Password</label>
-                    <input class="form-control" type="password"></input>
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <hr>
-    <div class="container w-50">
-        <h3 class="text-center merriweather">No Account?</h3>
-        <form>
-            <div class="row">
-                <div class="col">
-                    <label>Username</label>
-                    <input class="form-control" type="username"></input>
-                </div>
-                <div class = "col">
-                    <label>Password</label>
-                    <input class="form-control" type="password"></input>
-                </div>
-            </div>
-        </form>
-    </div>
-        
+<h1 class="merriweather text-center h1login">Log in</h1>
+<hr class="hrlog">
+<div class="container w-50">
+
+    <form class="row g-3 login-form">
+        <div class="col-12">
+            <label class="label1">Username</label>
+            <input class="form-control inputlog" type="text" id="name-login"></input>
+        </div>
+
+        <div class="col-12">
+            <label class="label1">Password</label>
+            <input class="form-control text-center inputlog" type="password" id="password-login"></input>
+        </div>
+        <div class="d-flex justify-content-center my-4">
+            <button type="submit" class="btn btn-primary w-25" style="min-width: fit-content;">Sign in</button>
+        </div>
+    </form>
+
 </div>
+<hr>
+<h3 class="noAcc text-center">No Account?</h3>
+<div class="container w-25">
+
+    <form class="row g-3 signup-form">
+        <div class="col-12">
+            <label class="label1">Username</label>
+            <input class="form-control inputlog" type="text" id="name-signup" required></input>
+        </div>
+
+        <div class="col-12">
+            <label class="label1">Password</label>
+            <input class="form-control text-center inputlog" type="password" id="password-signup" minlength="8" required></input>
+        </div>
+        <div class="d-flex justify-content-center my-4">
+            <button type="submit" class="btn btn-primary w-50" style="min-width: fit-content;" >Sign up</button>
+        </div>
+
+    </form>
+
+</div>
+<script src="./js/login.js"></script>
