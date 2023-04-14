@@ -46,3 +46,27 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.btn {
+	text-align: center;
+	display: inline-block;
+	padding: 0.5rem 1.2rem;
+	margin: 0;
+	text-decoration: none;
+	font-size: 1rem;
+	border-radius: 0.3rem;
+	border: 1px solid transparent;
+	outline: none;
+	color: #1a1a1a;
+	background-color: #aeaeae;
+	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+
+.btn.btn-primary{
+	background-color: #2d3e50;
+  	color: #d9e9e8;
+}
+
+.btn.btn-primary:hover {
+	background-color: #57779a;
+  }
