@@ -60,8 +60,8 @@ router.get('/choose', async (req, res) => {
     });
 });
 
-router.get('/signup', async (req, res) => {
-    res.render('signup', {
+router.get('/login', async (req, res) => {
+    res.render('login', {
         logged_in: req.session.logged_in
     });
 });
