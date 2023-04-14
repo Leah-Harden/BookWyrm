@@ -5,34 +5,26 @@ const withAuth = require('../utils/auth');
 const { User } = require('../models');
 
 //Should eventually include withAuth here so that it automatically reroutes to login page if not logged in.
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         // so that user does not exist to will go to the catch
-        const userData = await User.findAll({
-            include: [
-                {
-                    model: User,
-                    username: ['username'],
-                    bookProgress: []
-
-                },
-            ],
-        });
+        const userData = await User.findByPk(req.session.user_id);
+        const user = userData.get({plain: true});
+        console.log(user);
         //this see if the user is already reading a book 
-        if (bookProgress = true) {
+        if (user.bookProgress === true) {
 
-            const users = userData.map((user) => user.get({ plain: true }));
             res.render('book', {
                 logged_in: req.session.logged_in
             });
         } else {
             //this see if the user has no book on file so they can choose a new one
-            const users = userData.map((user) => user.get({ plain: true }));
             res.render('choose', {
                 logged_in: req.session.logged_in
             });
         }
     } catch (err) {
+        console.log(err);
         res.render('login', {
             logged_in: req.session.logged_in
         });
@@ -61,6 +53,9 @@ router.get('/choose', async (req, res) => {
 });
 
 router.get('/login', async (req, res) => {
+    if(req.session.logged_in){
+        res.redirect('/account');
+    }
     res.render('login', {
         logged_in: req.session.logged_in
     });

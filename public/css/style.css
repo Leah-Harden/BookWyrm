@@ -66,15 +66,15 @@ input {
 .h1login {
     font-size: 50px;
     font-family: 'Merriweather', serif;
-    padding: 100px 60px 0px 60px ;
 }
 
 .hrlog {
     border: var(--user) solid 5px;
-    width: 70%;
+    width: 100%;
+    opacity: 1;
 }
 .formlog {
-    padding: 50px;
+    padding: 0px 50px;
 }
 .inputlog {
     border-radius: 15px;
@@ -84,7 +84,7 @@ input {
 
 .label1 {
     font-family: 'Raleway', sans-serif;
-    padding: 15px;
+    padding: 10px 0px;
 }
 
 .noAcc {
