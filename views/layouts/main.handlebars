@@ -19,8 +19,28 @@
 </head>
 
 <body>
-    
+    <div class="nav">
+        <h1 class="navTitle merriweather">BookWyrm</h1>
+        <ul class="navUl">
+            <li class="navLi raleway" id="homeButton">
+                {{!-- need create a switch also the buttons dont really work for some reason--}}
 
+                <button class="navLi raleway" onclick="location.href='https://localhost:3001/choose/'" type="button">
+                    Home
+                </button>
+            </li>
+            <li class="navLi raleway" id="accButton">
+                <button class="navLi raleway" onclick="location.href='https://localhost:3001/account/'" type="button">
+                    Account
+                </button>
+            </li>
+            <li class="navLi raleway" id="logoutButton">
+                <button class="navLi raleway"  type="button">
+                    Log out
+                </button>
+            </li>
+        </ul>
+    </div>
     {{{body}}}
 
 </body>
