@@ -33,26 +33,26 @@ router.get('/', withAuth, async (req, res) => {
 
 
 
-router.get('/account', async (req, res) => {
+router.get('/account', withAuth, async (req, res) => {
     res.render('accountpage', {
         logged_in: req.session.logged_in
     });
 });
 
-router.get('/book', async (req, res) => {
+router.get('/book', withAuth, async (req, res) => {
     res.render('choose', {
         logged_in: req.session.logged_in
     });
 });
 
 
-router.get('/choose', async (req, res) => {
+router.get('/choose', withAuth, async (req, res) => {
     res.render('choose', {
         logged_in: req.session.logged_in
     });
 });
 
-router.get('/login', async (req, res) => {
+router.get('/login', withAuth, async (req, res) => {
     if(req.session.logged_in){
         res.redirect('/account');
     }
