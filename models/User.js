@@ -27,11 +27,15 @@ User.init({
             len: [8]
         }
     },
-
     // this is new
     bookProgress: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
+    },
+    medalProgress: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
     },
 },
 {

@@ -203,8 +203,48 @@ img {
 
 /* --------------- account --------------- */
 
+/* --------------- choice --------------- */
 
+.choiceBox {
+    align-items: center;
+    margin: 75px;
+}
 
+.choiceTop {
+    font-size: 45px;
+    font-family: 'Merriweather', serif;
+    padding: 60px;
+}
+.choiceHr {
+    border: var(--user) solid 3px;
+    width: 100%;
+    opacity: 70%;
+}
+
+.choiceCard {
+    background-color: var(--user);
+    color: var(--empty);
+    padding: 25px;
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.choiceSub {
+    justify-content: space-between;
+}
+
+.choiceSubtitle {
+    font-family: 'Merriweather', serif;
+    font-size: 21px;
+}
+
+.choiceBody {
+    padding: 40px 15px 40px 15px;
+    font-size: 20px;
+        font-family: 'Raleway', sans-serif;
+}
+/* --------------- choice --------------- */
 
 
 
