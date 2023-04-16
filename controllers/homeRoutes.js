@@ -31,15 +31,15 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+// add withAuth to these three before the end!
 
-
-router.get('/account', async (req, res) => {
+router.get('/account',  async (req, res) => {
     res.render('accountpage', {
         logged_in: req.session.logged_in
     });
 });
 
-router.get('/book', async (req, res) => {
+router.get('/book',async (req, res) => {
     res.render('choose', {
         logged_in: req.session.logged_in
     });
