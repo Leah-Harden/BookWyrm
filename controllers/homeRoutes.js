@@ -62,4 +62,12 @@ router.get('/login', async (req, res) => {
 });
 
 
+router.post('/', async (req, res) => {
+    const userData = await User.findByPk(req.session.user_id);
+
+});
+
+
+
+
 module.exports = router;
