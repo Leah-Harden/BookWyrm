@@ -60,6 +60,14 @@ router.get('/book',async (req, res) => {
     });
 });
 
+router.get('/book/:bookName',async (req, res) => {
+    res.render('book', {
+        logged_in: req.session.logged_in
+    });
+});
+
+
+
 
 router.get('/choose', async (req, res) => {
     res.render('choose', {
