@@ -1,24 +1,38 @@
-const User = require('./User');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
-const someOtherPlaintextPassword = 'not_bacon';
 
-const username = document.getElementById('name-login')
-const password = document.getElementById('password-login')
 
-if (username === User.username && password === User.password  ) {
+$("#nameBtn").click(function (event) {
+    event.preventDefault()
+    var bookName = inpName.value;
+    function change_page() {
+        if (bookName == "Search") {
+            console.log("no name")
+        } else {
+            router.get('/book/:',bookName, async (req, res) => {
+                res.render('book', {
+                    logged_in: req.session.logged_in
+                });
+            });
+        }
+    };
+    change_page()
+});
 
-} else{
+function helo() {
 
+    fetch('https://openlibrary.org/search.json?title='+ Home +'&limit=4&fields=title,author_name,isbn,cover_i,number_of_pages_median',{ method:'GET'})
+    .then(function(response){return response.json();})
+    .then(data => {
+        if ( bookName != '') {
+            bookTitle = data.title;
+            bookAuthor = data.author_name;
+            bookPages = data.number_of_pages_median;
+            document.getElementById("displayAge").textContent = data.age;
+            console.log(data);
+        }else{
+            console.log("broked age") ; 
+        }
+        
+        
+    })
+    .catch(err => console.log(err));
 }
-
-const signUsername = document.getElementById('name-signup')
-const signPassword = document.getElementById('password-signup')
-
-const newUser = {
-    name: signUsername,
-    password: bcrypt.hash(signPassword, saltRounds),
-
-};
-
-User.push(newUser);
