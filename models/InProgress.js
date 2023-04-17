@@ -11,7 +11,7 @@ InProgress.init({
         allowNull: false
     },
     timeRemaining: {
-        type: DataTypes.TIME,
+        type: DataTypes.INTEGER,
         allowNull: true
     },
     book_id: {

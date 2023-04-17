@@ -1,8 +1,8 @@
-
+const convert = require('convert-seconds');
 const router = require('express').Router();
 const fetch = require('node-fetch');
 const withAuth = require('../utils/auth');
-const { User } = require('../models');
+const { User, Book, InProgress } = require('../models');
 const medals = require('../utils/medals');
 
 //Should eventually include withAuth here so that it automatically reroutes to login page if not logged in.
@@ -55,9 +55,21 @@ router.get('/account',  async (req, res) => {
 });
 
 router.get('/book',async (req, res) => {
-    res.render('book', {
-        logged_in: req.session.logged_in
-    });
+    const bookInProgressData = await InProgress.findOne({where: {user_id: req.session.user_id}});
+    if(!bookInProgressData){
+        res.json({message: "No Book in progress."})
+    } else{
+        const bookInProgress = await bookInProgressData.get({plain: true});
+        const bookData = await Book.findByPk(bookInProgress.book_id);
+        const book = bookData.get({plain:true});
+        const timeConverted = convert(bookInProgress.timeRemaining);
+        const timeRemaining = `${timeConverted.hours}:${timeConverted.minutes}:${timeConverted.seconds}`;
+        res.render('book', {
+            logged_in: req.session.logged_in,
+            book,
+            timeRemaining
+        });
+    }
 });
 
 router.get('/book/:bookName',async (req, res) => {

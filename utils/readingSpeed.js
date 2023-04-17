@@ -4,7 +4,7 @@ var convert = require('convert-seconds');
 function slowReading(pages){
     let minutes = pages / 3.3;
     let seconds = minutes * 60;
-    console.log(convert(seconds))
+    console.log(convert(seconds));
 }
 
 
