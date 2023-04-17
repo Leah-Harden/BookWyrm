@@ -3,6 +3,7 @@ const router = require('express').Router();
 const fetch = require('node-fetch');
 const withAuth = require('../utils/auth');
 const { User } = require('../models');
+const medals = require('../utils/medals');
 
 //Should eventually include withAuth here so that it automatically reroutes to login page if not logged in.
 router.get('/', withAuth, async (req, res) => {
@@ -34,8 +35,22 @@ router.get('/', withAuth, async (req, res) => {
 // add withAuth to these three before the end!
 
 router.get('/account',  async (req, res) => {
+    const userData = await User.findByPk(req.session.user_id, {
+        attributes: {exclude: ['password']}
+    });
+    const user = userData.get({plain: true});
+    let userMedals = []
+    console.log(user.medalProgress);
+    if(user.medalProgress > 0){
+        for(let i = 0; i < user.medalProgress; i++){
+            userMedals.push(medals[i]);
+        }
+    }
+
     res.render('accountpage', {
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        user,
+        userMedals
     });
 });
 
