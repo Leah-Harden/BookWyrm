@@ -34,7 +34,7 @@ router.get('/', withAuth, async (req, res) => {
 
 // add withAuth to these three before the end!
 
-router.get('/account',  async (req, res) => {
+router.get('/account', withAuth,  async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
         attributes: {exclude: ['password']}
     });
@@ -54,7 +54,7 @@ router.get('/account',  async (req, res) => {
     });
 });
 
-router.get('/book',async (req, res) => {
+router.get('/book', withAuth, async (req, res) => {
     const bookInProgressData = await InProgress.findOne({where: {user_id: req.session.user_id}});
     if(!bookInProgressData){
         res.json({message: "No Book in progress."})
@@ -72,7 +72,7 @@ router.get('/book',async (req, res) => {
     }
 });
 
-router.get('/book/:bookName',async (req, res) => {
+router.get('/book/:bookName',withAuth, async (req, res) => {
     res.render('book', {
         logged_in: req.session.logged_in
     });
@@ -81,7 +81,7 @@ router.get('/book/:bookName',async (req, res) => {
 
 
 
-router.get('/choose', async (req, res) => {
+router.get('/choose', withAuth, async (req, res) => {
     res.render('choose', {
         logged_in: req.session.logged_in
     });
