@@ -1,16 +1,17 @@
 <div>
     <div class="d-flex flex-column accountPage">
-        <h1 class="usernameH1">{{user.username}}</h1>
+        <h1 class="usernameH1">{{user.name}}</h1>
         <hr class="hracc">
         <h3 class="showTitle">Your Showcase:</h3>
         <div class="case d-flex flex-row ">
+
             {{#each userMedals as |medal|}}
             <div class="d-flex align-items-center flex-column medalBox">
                 <img class="medal" src={{medal.source}}>
                 <p class="medalName">{{medal.name}}</p>
             </div>
             {{/each}}
-            
+
         </div>
     </div>
 </div>
