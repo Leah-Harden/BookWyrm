@@ -31,9 +31,9 @@ router.get('/:title', async (req, res) => {
     //     ...(book.number_of_pages_median ? { pageCount: book.number_of_pages_median } : {}),
     // })
     // console.log(bookInfo);
+
     // res.json(bookInfo);
 
-    
     try {
         const bookData = await fetch(`https://openlibrary.org/search.json?title=${(!!req.body.title ? req.body.title : "game+of+thrones")}&fields=title,author_name,isbn,cover_i,number_of_pages_median&limit=5&page=${(!!req.body.page_num ? req.body.page_num : '1')}`);
         const books = await bookData.json();

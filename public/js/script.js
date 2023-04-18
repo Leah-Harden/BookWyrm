@@ -36,3 +36,4 @@ function helo() {
     })
     .catch(err => console.log(err));
 }
+helo()
