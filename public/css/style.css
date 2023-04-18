@@ -93,7 +93,9 @@ input {
 
 .noAcc {
     font-family: 'Merriweather', serif;
-    padding-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .Mybutton {

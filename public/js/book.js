@@ -1,4 +1,3 @@
-
 let timerEl = document.querySelector('#timeLeft');
 let timeRemaining = timerEl.textContent.split(':').map((num) => num = parseInt(num));
 let totalSeconds = (timeRemaining[0]*60*60) + (timeRemaining[1]*60)+timeRemaining[2];
@@ -11,6 +10,13 @@ const updateCounter = () => {
     let seconds = totalSeconds % 3600;
     let minutes = Math.floor(seconds/60);
     seconds %= 60;
+
+    if(seconds < 10){
+        seconds = `0${seconds}`;
+    }
+    if(minutes < 10){
+        minutes = `0${minutes}`;
+    }
 
     timerEl.textContent = `${hours}:${minutes}:${seconds}`;
 
